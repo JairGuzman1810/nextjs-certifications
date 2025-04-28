@@ -1,0 +1,40 @@
+<html>
+  <body>
+    <div id="app"></div>
+
+    <!-- Load React library -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <!-- Load ReactDOM library -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Load Babel for JSX compilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+      // Select the div element with 'app' id
+      const domNode = document.getElementById("app");
+
+      // Header - Define a component that returns an H1 element
+      function Header() {
+        return (<h1>Develop. Preview. Ship.</h1>)
+      }
+
+      // HomePage - Define a component that nests the Header component
+      function HomePage() {
+        return (
+          <div>
+            {/* Nest the Header component inside a div */}
+            <Header />
+          </div>
+        )
+      }
+
+      // Create a React root attached to the selected div
+      const root = ReactDOM.createRoot(domNode);
+
+      // Render the HomePage component into the root
+      root.render(<HomePage />);
+    </script>
+  </body>
+</html>
